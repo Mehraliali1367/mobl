@@ -28,8 +28,8 @@ services:
     build:
       context: .
       dockerfile: apps/docker/www/Dockerfile
-    # volumes:
-    #   - ./node_modules:/app/www/node_modules
+    volumes:
+      - ./node_modules:/app/www/node_modules
     ports:
       - 3000:3000
     depends_on:
@@ -44,8 +44,8 @@ services:
       dockerfile: ./apps/docker/web/Dockerfile
     env_file:
       - ./apps/web/.env
-    # volumes:
-    #   - ./apps/web:/app/web
+    volumes:
+      - ./apps/web:/app/web
     ports:
       - 8000:8000
     depends_on:
