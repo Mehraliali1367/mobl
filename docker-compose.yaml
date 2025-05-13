@@ -1,0 +1,72 @@
+version: "3.9"
+
+services:
+  # ubuntu:
+  #   container_name: ubuntu
+  #   image: ubuntu
+  #   restart: on-failure
+  #   command: ["sleep","infinity"]
+  #   networks:
+  #     - main
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=amin
+      - POSTGRES_USER=amin
+      - POSTGRES_PASSWORD=amin@9211
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - ./postgresql/data/pgdata:/var/lib/postgresql/data
+    networks:
+      - main
+  www:
+    container_name: www
+    build:
+      context: .
+      dockerfile: apps/docker/www/Dockerfile
+    # volumes:
+    #   - ./node_modules:/app/www/node_modules
+    ports:
+      - 3000:3000
+    depends_on:
+      - web
+    networks:
+      - main
+
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./apps/docker/web/Dockerfile
+    env_file:
+      - ./apps/web/.env
+    # volumes:
+    #   - ./apps/web:/app/web
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    networks:
+      - main
+
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: apps/docker/nginx/Dockerfile
+    volumes:
+      - ./apps/web/static:/app/web/static
+    ports:
+      - 80:80
+    networks:
+      - main
+  
+volumes:
+  pgdata:
+networks:
+  main:
+    driver: bridge
