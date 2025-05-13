@@ -1,0 +1,90 @@
+/* Footer */
+/* accodion */
+.footer {
+    display: flex;
+  }
+  .footer .container-cer {
+    /* position: relative; */
+    flex: 1 1 calc(40%);
+    background: var(--clr-grey-7);
+  }
+  .certifications {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .enamad {
+    /* position: absolute;
+    bottom: 1rem;
+    right: 1rem;     */
+    background: var(--clr-grey-1);
+    border-radius: 3rem;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    overflow: hidden;
+  }
+  .container-enamad img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .section-contact {
+    background: var(--clr-primary-3);
+    padding: 3rem 0;
+  }
+  .contact-title h3,
+  .contact-title p {
+    color: var(--clr-white);
+  }
+  .contact-form {
+    display: flex;
+    border-radius: 20px 20px;
+  }
+
+
+  .contact-container {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .contact-form {
+    margin-bottom: 2rem;
+  }
+  @media screen and (min-width: 768px) {
+    .contact-container {
+      display: flex;
+      gap: 3rem;
+      width: 98%;
+      margin: 1rem 0rem 0 1rem;
+    }
+    .contact-form {
+      flex: 1 1 auto;
+      align-self: flex-start;
+    }
+  }
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .social-telegram,
+  .social-intsagram {
+    color: var(--clr-primary-1);
+    font-size: 2rem;
+  }
+  .eitaa,
+  .bale {
+    width: 30px;
+    height: 30px;
+    background: var(--clr-primary-1);
+    border-radius: 5px;
+    display: inline;
+  }
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  
+  /* EndFooter */

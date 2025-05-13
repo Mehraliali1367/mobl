@@ -1,0 +1,112 @@
+.footer .container {
+  background: var(--clr-grey-7);
+  padding: 0;
+  flex: 1 1 calc(60%);
+}
+
+.accordion {
+  margin-bottom: 30px;
+}
+
+.accordion__content-wrapper {
+  font-size: 1.25em;
+  line-height: 1.4em;
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.25s ease-in-out;
+}
+.title-icon {
+  display: none;
+}
+.accordion__title {
+  border-top: var(--clr-white) 1px solid;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 30px 0 0 0;
+  /* position: relative; */
+  margin-bottom: 1.2rem;
+  color: var(--clr-white);
+  transition: all 0.25s ease-out;
+}
+
+.accordion__title::after {
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+  content: " ";
+  height: 10px;
+  left: 2px;
+  transform: rotate(135deg);
+  transition: 0.35s ease-in-out;
+  width: 10px;
+}
+
+/* OPTIONAL HOVER STATE */
+.accordion__title:hover {
+  color: var(--clr-white);
+}
+
+.accordion__trigger:checked
+  + .container-title-drawer
+  + .accordion__content-wrapper {
+  max-height: 350px;
+}
+.accordion__trigger:checked + .container-title-drawer .accordion__title::after {
+  transform: rotate(-45deg);
+  transition: 0.25s ease-in-out;
+}
+.accordion__content p {
+  color: var(--clr-white);
+  font-size: 0.875rem;
+}
+.accordion__trigger {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container,.container-cer{
+    /* flex: 0 0 calc(100%); */
+  }
+  .footer .container {
+    padding: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .accordion__content-wrapper {
+    font-size: 1.25em;
+    line-height: 1.4em;
+    max-height: max-content;
+    overflow: visible;
+    transition: 0.25s ease-in-out;
+  }
+  .footer .container {
+    display: flex;
+    justify-content: space-around;
+  }
+  .title-icon {
+    display: block;
+  }
+  .title-icon i {
+    color: var(--clr-primary-1);
+  }
+  .container-title-drawer {
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+    gap: 5px;
+  }
+  .accordion__title {
+    border-top: none;
+  }
+  .accordion__title::after {
+    border-style: none;
+    color: var(--clr-white);
+  }
+}

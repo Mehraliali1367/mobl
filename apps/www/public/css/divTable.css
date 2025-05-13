@@ -1,0 +1,61 @@
+.table {
+  margin: 1rem auto;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+.btn-table {
+  border-radius: 5px;
+  padding: 0.6rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 1rem 0rem;
+}
+.table-row {
+  display: flex;
+  width: 100%;
+  min-height: 100px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-grey-5);
+}
+.table-head {
+  border-bottom: 2px solid var(--clr-grey-7);
+}
+.col-3vw {
+  flex: 1 1 calc(3vw);
+  text-align: center;
+}
+.col-5vw {
+  flex: 1 1 calc(5vw);
+  text-align: center;
+}
+.col-10vw {
+  flex: 1 1 calc(10vw);
+  text-align: center;
+}
+.col-12 {
+  flex: 1 1 calc(12vw);
+  text-align: center;
+}
+
+.col-14 {
+  flex: 1 1 calc(14vw);
+  text-align: center;
+}
+.col-16 {
+  flex: 1 1 calc(16vw);
+  text-align: center;
+}
+.col-18 {
+  flex: 1 1 calc(18vw);
+  text-align: center;
+}
+.col-20 {
+  flex: 1 1 calc(20vw);
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .table {
+    font-size: 1rem;
+  }
+}

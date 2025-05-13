@@ -1,0 +1,44 @@
+.cart {
+  width: 95vw;
+  margin: 1rem auto;
+}
+.pic {
+  width: 100%;
+  height: auto;
+}
+.ch-coupon{
+    flex: 0 0 var(40% - 1rem);
+}
+.group-control-input {
+  flex: 0 0 var(40% - 1rem);
+  display: flex;
+  margin:0 2rem
+}
+.group-control-input .form-control {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 15rem;
+  height: 3rem;
+  box-shadow: var(--light-shadow);
+   border-radius: 10px;
+}
+.m-auto {
+  margin: auto auto;
+}
+.group-side-btn{
+    padding: .875rem;
+}
+.form-label{
+    margin: auto auto;
+}
+@media screen and (min-width: 768px) {
+  .cart {
+    width: 70vw;
+    margin: 2rem auto;
+  }
+  .pic {
+    width: 40%;
+    margin: 0 auto;
+  }
+}

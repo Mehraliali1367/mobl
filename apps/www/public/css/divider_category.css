@@ -1,0 +1,9 @@
+
+/* divider product */
+
+.divider-product img {
+  height: 25rem;
+  width: 100%;
+  object-fit: fill;
+}
+/* End divider product */

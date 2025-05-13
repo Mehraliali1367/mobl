@@ -1,0 +1,68 @@
+
+/* About */
+/* End About */
+.about-page {
+    background: var(--clr-grey-2);
+    line-height: 2;
+    text-align: justify;
+  }
+  .about-p1 {
+    padding-top: 2rem;
+    font-weight: bold;
+  }
+  .about-p1 h1 {
+    color: var(--clr-grey-7);
+    font-size: 2.5rem;
+  }
+  .about-p2 {
+    margin-top: 4rem;
+  }
+  
+  .about-p2-items h3 {
+    background: var(--clr-grey-2);
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  
+  .col-about-box {
+    max-height: 15rem;
+  }
+  .col-about-box img {
+    border-radius: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    .about-p2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+    }
+    .about-p2 .col {
+      flex: 0 0 calc(50% - 1rem);
+    }
+    .col-about-box {
+      position: relative;
+      z-index: 1;
+      max-height: 35rem;
+      max-width: 35rem;
+    }
+  
+    .col-about-box::after {
+      content: "";
+      position: absolute;
+      border: 0.35rem solid var(--clr-primary-1);
+      top: 1rem;
+      right: 1rem;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      box-sizing: border-box;
+    }
+  }
+  .about-p3 {
+    padding-top: 1.5rem;
+  }
+  .about-p3 p {
+    margin-bottom: 0;
+    padding-bottom: 3rem;
+  }
+  

@@ -1,0 +1,116 @@
+.conteiner-silder {
+  display: flex;
+  flex-direction: column;
+  flex: row nowrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+.baner-slider {
+  flex: 1 1 calc(70%);
+}
+.baner-collection {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex: 1 1 calc(25%);
+}
+.mySlides img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.baner-collection-item img {
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+  .conteiner-silder {
+    flex-direction: row;
+  }
+  .baner-collection {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .baner-collection {
+    gap: 1.6rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .baner-collection {
+    gap: 2.6rem;
+  }
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+@media screen and (min-width: 480px) {
+  .text {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .text {
+    font-size: 1.785rem;
+    bottom: 20px;
+  }
+}
+/* The dots/bullets/indicators */
+.container-dot {
+  position: absolute;
+  margin-left: auto;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.dot {
+  height: 0.3rem;
+  width: 0.3rem;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.container-dot .active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
