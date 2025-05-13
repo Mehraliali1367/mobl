@@ -9,7 +9,7 @@ media
 
 # Backup files # 
 *.bak 
-
+ب
 # If you are using PyCharm # 
 # User-specific stuff
 .idea/**/workspace.xml
@@ -99,7 +99,6 @@ celerybeat-schedule.*
 *.sage.py 
 
 # Environments 
-.env 
 .venv 
 env/ 
 venv/ 
@@ -174,7 +173,6 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
 
 # vercel
 .vercel
