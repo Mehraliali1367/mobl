@@ -1,6 +1,6 @@
 "use client";
-import Login from "../components/layout/auth/login/Login";
-import Verify from "../ccomponents/layout/auth/login/Verify";
+import Login from "../../../components/layout/auth/login/Login";
+import Verify from "../../../components/layout/auth/login/Verify";
 import { useState } from "react";
 
 export default function loginPage() {
