@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { numberFormat } from "../../utils/helper";
+import { numberFormat } from "../../../utils/helper";
 
 export default function Order({ data }) {
   const ModalOrders = dynamic(() => import("./modalOrders"), { ssr: false });

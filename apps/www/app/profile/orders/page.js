@@ -1,4 +1,4 @@
-import { getToken } from "../../../actions";
+import { getToken } from "../../../actions/auth/loginAction";
 import Order from "../../../components/profile/orders/order";
 import { getFetch } from "../../../utils/fetch";
 

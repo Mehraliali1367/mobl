@@ -1,6 +1,6 @@
 "use client";
 
-import { getBlurDataUrl, numberFormat } from "../../utils/helper";
+import { getBlurDataUrl, numberFormat } from "../../../utils/helper";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
