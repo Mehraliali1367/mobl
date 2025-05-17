@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Tab from "./Tab";
 import Slider from "../../products/slider/Slider";
-import "../../public/css/tabs.css"
+import "../../../public/css/tabs.css"
 
 const Tabs = ({ tabs, category_name }) => {
   const [activeTab, setActiveTab] = useState(1);
