@@ -1,6 +1,6 @@
 "use client";
 
-import { me_user } from "@/actions/auth/loginAction";
+import { me_user } from "../../actions/auth/loginAction";
 
 const { createContext, useState, useEffect } = require("react");
 

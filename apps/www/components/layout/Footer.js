@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { GetPhoneClientAction } from "@/actions/homeActions/Home";
+import { GetPhoneClientAction } from "../actions/homeActions/Home";
 import GetPhoneClientForm from "./GetPhoneClientForm";
 
 export default function Footer() {

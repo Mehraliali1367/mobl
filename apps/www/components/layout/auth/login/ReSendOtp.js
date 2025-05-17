@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { resendOtp } from "@/actions/auth/loginAction";
+import { resendOtp } from "../actions/auth/loginAction";
 
 export default function ReSendOtp() {
   const [stateResendOtp, formActionResendOtp] = useActionState(resendOtp, {});

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "@/public/css/slider-scroll-horizontal.css";
+import "../../public/css/slider-scroll-horizontal.css";
 import Cart from "../Card";
 
 

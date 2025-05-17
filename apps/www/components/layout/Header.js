@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import logo_shop from "@/public/images/logo/logo_shop.webp";
-import { getBlurDataUrl } from "@/utils/helper";
+import logo_shop from "../../public/images/logo/logo_shop.webp";
+import { getBlurDataUrl } from "../../utils/helper";
 import { usePathname } from "next/navigation";
 import { useContext } from "react";
-import AuthContext from "@/context/AuthContext";
+import AuthContext from "../../context/AuthContext";
 import { useSelector } from "react-redux";
 export default function Header() {
   const pathname = usePathname();

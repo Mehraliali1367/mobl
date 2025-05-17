@@ -1,20 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import { getBlurDataUrl, numberFormat } from "@/utils/helper";
+import { getBlurDataUrl, numberFormat } from "../../utils/helper";
 import { Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Controller } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import large from "@/public/images/products/chob iran1/chob-iran1-size-800pixle.jpg";
-import "@/public/css/productPage.css";
+// import large from "../../public/images/products/chob iran1/chob-iran1-size-800pixle.jpg";
+import "../../public/css/productPage.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import TabsProfileProduct from "./tabsProfileProduct/TabsProfileProduct";
 import { useDispatch } from "react-redux";
-import { addToCart, removFromCart } from "@/redux/slices/cartSlice";
+import { addToCart, removFromCart } from "../../redux/slices/cartSlice";
 import { toast } from "react-toastify";
 
 export default function Product({ product }) {

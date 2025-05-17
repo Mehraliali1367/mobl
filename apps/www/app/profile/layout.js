@@ -1,10 +1,10 @@
 "use client";
-import "@/public/css/profilePage.css";
-import "@/public/css/modal.css";
+import "../public/css/profilePage.css";
+import "../public/css/modal.css";
 import Link from "next/link";
-import { logout } from "@/actions/auth/loginAction";
+import { logout } from "../actions/auth/loginAction";
 import { useContext } from "react";
-import AuthContext from "@/context/AuthContext";
+import AuthContext from "../context/AuthContext";
 import { useRouter } from "next/navigation";
 export default function Layout({ children }) {
   const { logoutContext } = useContext(AuthContext);

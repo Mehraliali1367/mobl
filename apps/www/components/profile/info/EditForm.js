@@ -1,5 +1,5 @@
 "use client";
-import { EditPersonalAction } from "@/actions/profile/profileAction";
+import { EditPersonalAction } from "../../actions/profile/profileAction";
 import { useActionState, useEffect } from "react";
 import { toast } from "react-toastify";
 

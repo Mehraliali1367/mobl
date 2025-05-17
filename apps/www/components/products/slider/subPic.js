@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Cart from "../Card";
-import "@/public/css/slider-scroll-horizontal.css";
+import "../../public/css/slider-scroll-horizontal.css";
 
 
 export default function subPic({ pics }) {

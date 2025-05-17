@@ -1,5 +1,5 @@
 "use client";
-import { NewAddressAction } from "@/actions/profile/profileAction";
+import { NewAddressAction } from "../../actions/profile/profileAction";
 import { useActionState, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 

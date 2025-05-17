@@ -1,6 +1,6 @@
 "use client";
-import { addToCart, removFromCart } from "@/redux/slices/cartSlice";
-import { getBlurDataUrl, numberFormat } from "@/utils/helper";
+import { addToCart, removFromCart } from "../../redux/slices/cartSlice";
+import { getBlurDataUrl, numberFormat } from "../../utils/helper";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux";

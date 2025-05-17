@@ -1,7 +1,7 @@
-import { getToken } from "@/actions/auth/loginAction";
-import EditAddress from "@/components/profile/address/editAddress";
-import NewAddress from "@/components/profile/address/newAddress";
-import { getFetch } from "@/utils/fetch";
+import { getToken } from "../actions/auth/loginAction";
+import EditAddress from "../components/profile/address/editAddress";
+import NewAddress from "../components/profile/address/newAddress";
+import { getFetch } from "../utils/fetch";
 
 export default async function Addresses() {
   const access_token = await getToken("access-token");
