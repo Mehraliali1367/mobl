@@ -1,7 +1,7 @@
 // Filename  - Tabs.js
 
 import { useState } from "react";
-import "../../public/css/tabs.css";
+import "../../../public/css/tabs.css";
 import TabProfileProduct from "./TabProfileProduct";
 
 const TabsProfileProduct = ({ tabs, data }) => {
