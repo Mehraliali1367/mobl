@@ -1,8 +1,8 @@
 "use client";
 import {
   verifyAction,
-} from "../actions/auth/loginAction";
-import AuthContext from "../context/AuthContext";
+} from "../../../../actions/auth/loginAction";
+import AuthContext from "../../../../context/AuthContext";
 import "../public/css/loginPage.css";
 import { useActionState, useContext, useEffect } from "react";
 import { toast } from "react-toastify";

@@ -1,6 +1,6 @@
 "use client";
-import { loginAction, storeToken } from "../actions/auth/loginAction";
-import "../public/css/loginPage.css";
+import { loginAction, storeToken } from "../../../../actions/auth/loginAction";
+import "../../../../public/css/loginPage.css";
 import { useActionState, useEffect } from "react";
 import { toast } from "react-toastify";
 export default function Login({ showSetState }) {

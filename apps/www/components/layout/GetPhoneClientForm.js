@@ -1,5 +1,5 @@
 "use client";
-import { GetPhoneClientAction } from "../actions/homeActions/Home";
+import { GetPhoneClientAction } from "../../actions/homeActions/Home";
 import { useActionState, useEffect } from "react";
 import { toast } from "react-toastify";
 

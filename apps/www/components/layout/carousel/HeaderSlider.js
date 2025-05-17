@@ -1,4 +1,4 @@
-import { getBlurDataUrl } from "../utils/helper";
+import { getBlurDataUrl } from "../../../utils/helper";
 import Image from "next/image";
 
 export default function HeaderSlider() {
