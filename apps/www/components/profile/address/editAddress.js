@@ -2,7 +2,7 @@
 import {
   EditAddresslAction,
   RemoveAddressAction,
-} from "../../actions/profile/profileAction";
+} from "../../../actions/profile/profileAction";
 import { useActionState, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 

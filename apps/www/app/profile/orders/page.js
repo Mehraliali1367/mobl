@@ -1,6 +1,6 @@
-import { getToken } from "../actions/auth/loginAction";
-import Order from "../components/profile/orders/order";
-import { getFetch } from "../utils/fetch";
+import { getToken } from "../../../actions";
+import Order from "../../../components/profile/orders/order";
+import { getFetch } from "../../../utils/fetch";
 
 export default async function Orders() {
   const access_token = await getToken("access-token");
