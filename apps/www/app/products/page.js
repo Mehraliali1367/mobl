@@ -1,6 +1,6 @@
-import Loading from "../components/products/Loading";
-import ProductList from "../components/products/ProductList";
-import "../public/css/productsPage.css";
+import Loading from "../../components/products/Loading";
+import ProductList from "../../components/products/ProductList";
+import "../../public/css/productsPage.css";
 import { Suspense } from "react";
 
 export default function productsPage() {
