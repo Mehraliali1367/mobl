@@ -1,7 +1,7 @@
 import "../public/css/globals.css";
 import Header from "../components/layout/Header";
-import Tostify from "../components/lib/Toastify"
-import NextNProgress from "../components/lib/NextNProgressBar";
+import Tostify from "../components/libLayout/Toastify"
+import NextNProgress from "../components/libLayout/NextNProgressBar";
 import Footer from "../components/layout/Footer";
 import { AuthProvider } from "../context/AuthContext";
 import Providers from "../redux/Provider";
