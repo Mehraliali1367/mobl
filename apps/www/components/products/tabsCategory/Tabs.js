@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Tab from "./Tab";
 import Slider from "../../products/slider/Slider";
-import "../../../public/css/tabs.css"
+import "../../../public/css/tabs.css";
 
 const Tabs = ({ tabs, category_name }) => {
   const [activeTab, setActiveTab] = useState(1);
@@ -10,21 +10,24 @@ const Tabs = ({ tabs, category_name }) => {
   const category = category_name;
   const findTabCategory = "ul_" + category_name;
   let name_persian = "";
-  
+
   const handleTabClick = (index, products) => {
     setActiveTab(index);
     setProducts(products);
   };
-  
+
   tabs.forEach((element) => {
     element.name == category ? (name_persian = element.name_persian) : "";
   });
 
   useEffect(() => {
     // baraye  ejra shodan avalin tab ta mahsolat ta an goroh ra nemayesh bedahad
-    const cls_obj = "." + findTabCategory + ">" + "li";
-    const itemcClick = document.querySelector(cls_obj);
-    itemcClick.click();
+    try {
+      const cls_obj = "." + findTabCategory + ">" + "li";
+      const itemcClick = document.querySelector(cls_obj);
+      itemcClick.click();
+    } catch (error) {}
+
     // end
   }, []);
 
