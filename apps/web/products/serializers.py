@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Category, Product, ProductImage
 
+addr_server = '37.152.180.252'
+
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -33,7 +35,7 @@ class ProductSerializer(serializers.ModelSerializer):
         return obj.category.name
 
     def get_primary_image(self, obj):
-        return f'http://localhost:8000/media/{obj.primary_image}'
+        return f'http://${addr_server}:8000/media/{obj.primary_image}'
 
     class Meta:
         model = Product
@@ -57,7 +59,7 @@ class ProductSerializerAndImages(serializers.ModelSerializer):
         return obj.category.name
 
     def get_primary_image(self, obj):
-        return f'http://localhost:8000/media/{obj.primary_image}'
+        return f'http://${addr_server}:8000/media/{obj.primary_image}'
 
     def get_images(self, obj):
         images = []
@@ -81,13 +83,13 @@ class ProductImageSerializer(serializers.ModelSerializer):
     img800 = serializers.SerializerMethodField(source='get_img800')
 
     def get_img100(self, obj):
-        return f'http://localhost:8000/media/{obj.img_l}'
+        return f'http://${addr_server}:8000/media/{obj.img_l}'
 
     def get_img400(self, obj):
-        return f'http://localhost:8000/media/{obj.img_m}'
+        return f'http://${addr_server}:8000/media/{obj.img_m}'
 
     def get_img800(self, obj):
-        return f'http://localhost:8000/media/{obj.img_h}'
+        return f'http://${addr_server}:8000/media/{obj.img_h}'
 
     class Meta:
         model = ProductImage
@@ -102,7 +104,7 @@ class ProductsInstanceCategorySerializer(serializers.ModelSerializer):
         return obj.category.name
 
     def get_primary_image(self, obj):
-        return f'http://localhost:8000/media/{obj.primary_image}'
+        return f'http://${addr_server}:8000/media/{obj.primary_image}'
 
     class Meta:
         model = Product
