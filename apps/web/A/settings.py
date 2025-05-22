@@ -14,11 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 
-
 load_dotenv()
-
-# print(os.getenv("DJANGO_ALLOWED_HOSTS").split(" "))
-from django.conf.global_settings import LOGIN_URL, AUTH_USER_MODEL
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,10 +29,7 @@ SECRET_KEY = str(os.getenv("SECRET_KEY"))
 DEBUG = bool(os.getenv("DEBUG", default=0))
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
-# For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-# ALLOWED_HOSTS = [str(os.getenv("DJANGO_ALLOWED_HOSTS"))]
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS").split(" ")
-    # os.getenv("DJANGO_ALLOWED_HOSTS").split(" ")
 
 # Application definition
 
@@ -47,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
     # myapp
     'accounts.apps.AccountsConfig',
     'products.apps.ProductsConfig',
@@ -54,6 +48,7 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'custom_command.apps.CustomCommandConfig',
     # install madule
+    'storages',
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
@@ -107,19 +102,12 @@ DATABASES = {
     "default": {
         # "ENGINE": "django.db.backends.sqlite3",
         # "NAME": BASE_DIR / "db.sqlite3",
-        #
-        # "ENGINE": os.getenv("SQL_ENGINE", "django.db.backends.sqlite3"),
-        # "NAME": os.getenv("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
-        # "USER": os.getenv("SQL_USER", "user"),
-        # "PASSWORD": os.getenv("SQL_PASSWORD", "password"),
-        # "HOST": os.getenv("SQL_HOST", "localhost"),
-        # "PORT": os.getenv("SQL_PORT", "5432"),
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'amin',
-        'USER': 'amin',
-        'PASSWORD': 'amin@9211',
-        'HOST': 'db',
-        'PORT': '5432',
+        "ENGINE": os.getenv("SQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": os.getenv("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
+        "USER": os.getenv("SQL_USER", "user"),
+        "PASSWORD": os.getenv("SQL_PASSWORD", "password"),
+        "HOST": os.getenv("SQL_HOST", "localhost"),
+        "PORT": os.getenv("SQL_PORT", "5432"),
     }
 }
 
@@ -159,8 +147,7 @@ STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -172,10 +159,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
-
 }
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=5),
@@ -188,5 +173,19 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
         'font_names': 'Vazirmatn/Vazirmatn;'
+    },
+}
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+        "OPTIONS": {
+            "access_key": '3ab8434d-4e25-4de3-9e9f-914ec5f4eb2d',
+            "secret_key": 'd7c489bc7ba32203d2900e21c5f10fb4b91efddc39df33ecb65042156edbf719',
+            "endpoint_url": 'https://s3.ir-thr-at1.arvanstorage.ir',
+            "bucket_name": 'sofa',
+        }
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
