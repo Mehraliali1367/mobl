@@ -7,6 +7,12 @@ const nextConfig = {
         protocol: "http",
         hostname: "localhost",
       },
+      {
+        protocol: 'https',
+        hostname: 'https://s3.ir-thr-at1.arvanstorage.ir/',
+        // port: '',
+        // pathname: '/**',
+      }
     ],
   },
 };
