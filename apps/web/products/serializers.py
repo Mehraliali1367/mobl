@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Category, Product, ProductImage
 
-addr_server = '37.152.180.252'
+# addr_server = '37.152.180.252'
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -29,13 +29,13 @@ class SubcategorySerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     category = serializers.SerializerMethodField(source='get_category')
-    primary_image = serializers.SerializerMethodField(source='get_primary_image')
+    # primary_image = serializers.SerializerMethodField(source='get_primary_image')
 
     def get_category(self, obj):
         return obj.category.name
 
-    def get_primary_image(self, obj):
-        return f'http://${addr_server}:8000/media/{obj.primary_image}'
+    # def get_primary_image(self, obj):
+    #     return f'http://${addr_server}:8000/media/{obj.primary_image}'
 
     class Meta:
         model = Product
@@ -49,7 +49,7 @@ class ProductSerializer(serializers.ModelSerializer):
 class ProductSerializerAndImages(serializers.ModelSerializer):
     category_name_persian = serializers.SerializerMethodField(source='get_category_name_persian')
     category = serializers.SerializerMethodField(source='get_category')
-    primary_image = serializers.SerializerMethodField(source='get_primary_image')
+    # primary_image = serializers.SerializerMethodField(source='get_primary_image')
     images = serializers.SerializerMethodField(source='get_images')
 
     def get_category_name_persian(self, obj):
@@ -58,8 +58,8 @@ class ProductSerializerAndImages(serializers.ModelSerializer):
     def get_category(self, obj):
         return obj.category.name
 
-    def get_primary_image(self, obj):
-        return f'http://${addr_server}:8000/media/{obj.primary_image}'
+    # def get_primary_image(self, obj):
+    #     return f'http://${addr_server}:8000/media/{obj.primary_image}'
 
     def get_images(self, obj):
         images = []
@@ -78,18 +78,18 @@ class ProductSerializerAndImages(serializers.ModelSerializer):
 
 
 class ProductImageSerializer(serializers.ModelSerializer):
-    img100 = serializers.SerializerMethodField(source='get_img100')
-    img400 = serializers.SerializerMethodField(source='get_img400')
-    img800 = serializers.SerializerMethodField(source='get_img800')
+    # img100 = serializers.SerializerMethodField(source='get_img100')
+    # img400 = serializers.SerializerMethodField(source='get_img400')
+    # img800 = serializers.SerializerMethodField(source='get_img800')
 
-    def get_img100(self, obj):
-        return f'http://${addr_server}:8000/media/{obj.img_l}'
-
-    def get_img400(self, obj):
-        return f'http://${addr_server}:8000/media/{obj.img_m}'
-
-    def get_img800(self, obj):
-        return f'http://${addr_server}:8000/media/{obj.img_h}'
+    # def get_img100(self, obj):
+    #     return f'http://${addr_server}:8000/media/{obj.img_l}'
+    #
+    # def get_img400(self, obj):
+    #     return f'http://${addr_server}:8000/media/{obj.img_m}'
+    #
+    # def get_img800(self, obj):
+    #     return f'http://${addr_server}:8000/media/{obj.img_h}'
 
     class Meta:
         model = ProductImage
@@ -98,13 +98,13 @@ class ProductImageSerializer(serializers.ModelSerializer):
 
 class ProductsInstanceCategorySerializer(serializers.ModelSerializer):
     category = serializers.SerializerMethodField(source='get_category')
-    primary_image = serializers.SerializerMethodField(source='get_primary_image')
+    # primary_image = serializers.SerializerMethodField(source='get_primary_image')
 
     def get_category(self, obj):
         return obj.category.name
 
-    def get_primary_image(self, obj):
-        return f'http://${addr_server}:8000/media/{obj.primary_image}'
+    # def get_primary_image(self, obj):
+    #     return f'http://${addr_server}:8000/media/{obj.primary_image}'
 
     class Meta:
         model = Product
