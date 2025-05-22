@@ -1,4 +1,5 @@
 const mainUrl = "http://web:8000/api";
+// const mainUrl = "http://localhost:8000/api";
 
 const getFetch = async (url, headers = {}) => {
   const request = await fetch(`${mainUrl}${url}`, {
