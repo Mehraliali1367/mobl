@@ -73,6 +73,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://192.168.1.5:3000",
+    "http://37.152.180.252",
 ]
 
 ROOT_URLCONF = "A.urls"
