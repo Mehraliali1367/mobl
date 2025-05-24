@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Category, Product, ProductImage
 
+
 # addr_server = '37.152.180.252'
 
 
@@ -29,6 +30,7 @@ class SubcategorySerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     category = serializers.SerializerMethodField(source='get_category')
+
     # primary_image = serializers.SerializerMethodField(source='get_primary_image')
 
     def get_category(self, obj):
@@ -93,11 +95,12 @@ class ProductImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProductImage
-        fields = ('product_type_name', 'slug', 'img100', 'img400', 'img800')
+        fields = ('product_type_name', 'slug', 'img_l', 'img_m', 'img_h')
 
 
 class ProductsInstanceCategorySerializer(serializers.ModelSerializer):
     category = serializers.SerializerMethodField(source='get_category')
+
     # primary_image = serializers.SerializerMethodField(source='get_primary_image')
 
     def get_category(self, obj):

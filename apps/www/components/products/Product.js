@@ -92,11 +92,11 @@ export default function Product({ product }) {
                           height={0}
                           sizes="100vw"
                           style={{ width: "80%", height: "40%" }}
-                          src={img.img100}
+                          src={img.img_l}
                           placeholder="blur"
                           blurDataURL={getBlurDataUrl()}
                           alt="image-slider"
-                          onClick={() => handleClick(img.img800)}
+                          onClick={() => handleClick(img.img_h)}
                         />
                       </SwiperSlide>
                     ))

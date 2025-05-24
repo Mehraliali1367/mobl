@@ -123,3 +123,4 @@ class DetailProduct(APIView):
             return Response(ser_data.data, status=status.HTTP_200_OK)
         else:
             return Response(ser_data.errors)
+
