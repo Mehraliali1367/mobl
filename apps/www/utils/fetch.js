@@ -1,4 +1,4 @@
-const mainUrl = "http://web:8000/api";
+const mainUrl = "http://37.152.180.252:8000/api";
 // const mainUrl = "http://localhost:8000/api";
 
 const getFetch = async (url, headers = {}) => {
