@@ -30,8 +30,6 @@ export default async function home() {
 
       <Feature />
       {/* <!--End Features --> */}
-
-      <Script src="/js/slider-header.js"></Script>
     </>
   );
 }

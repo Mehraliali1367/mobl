@@ -156,3 +156,11 @@ p{margin-bottom: 0;}
     text-align: center;
   }
 }
+.swiper-product-page{
+  width: 20vw;
+}
+@media (min-width: 768px) {
+  .swiper-product-page{
+  width: 20vw !important;
+}
+}

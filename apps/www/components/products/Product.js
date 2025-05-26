@@ -2,14 +2,18 @@
 
 import Image from "next/image";
 import { getBlurDataUrl, numberFormat } from "../../utils/helper";
-import { Pagination, Navigation } from "swiper/modules";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Controller } from "swiper/modules";
+
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/free-mode";
 import "swiper/css/navigation";
-// import large from "../../public/images/products/chob iran1/chob-iran1-size-800pixle.jpg";
+import "swiper/css/thumbs";
+
 import "../../public/css/productPage.css";
+
+// import large from "../../public/images/products/chob iran1/chob-iran1-size-800pixle.jpg";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import TabsProfileProduct from "./tabsProfileProduct/TabsProfileProduct";
@@ -29,7 +33,7 @@ export default function Product({ product }) {
   const handleAddToCart = (product) => {
     dispatch(removFromCart(product.id));
     dispatch(addToCart({ product, qty: quantity }));
-    toast.success("محصول به سبد خرید اضافه شد.")
+    toast.success("محصول به سبد خرید اضافه شد.");
   };
   const tabData = [
     { label: "توضیحات" },
@@ -62,36 +66,25 @@ export default function Product({ product }) {
             </div>
             <div className="container-swiper swiper-wrapper-page-product">
               <Swiper
-                modules={[Controller, Pagination, Navigation]}
-                id="swiper-product-page"
-                spaceBetween={20}
-                navigation={true}
-                pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
-                loop={false}
-                // modules={[Pagination, Navigation]}
-                breakpoints={{
-                  0: { slidesPerView: 3 },
-                  580: { slidesPerView: 4 },
-                  768: { slidesPerView: 3 },
-                  1024: { slidesPerView: 4 },
-                  1200: { slidesPerView: 5 },
-                }}
-                style={{
-                  "--swiper-navigation-color": "#4b2f02",
-                  "--swiper-pagination-color": "#4b2f02",
-                  "--swiper-pagination-bottom": "0px",
-                }}
+                // onSwiper={setThumbsSwiper}
+                spaceBetween={10}
+                slidesPerView={4}
+                freeMode={true}
+                watchSlidesProgress={true}
+                modules={[FreeMode, Navigation, Thumbs]}
+                className="swiper"
+                style={{width:"20vw"}}
               >
                 {product.images
                   ? product.images.map((img, index) => (
                       <SwiperSlide key={index}>
                         <Image
                           className="product-page-img-slid"
+                          priority
                           width={0}
                           height={0}
-                          sizes="100vw"
-                          style={{ width: "80%", height: "40%" }}
+                          sizes="70"
+                          style={{ width: "100%", height: "auto" }}
                           src={img.img_l}
                           placeholder="blur"
                           blurDataURL={getBlurDataUrl()}

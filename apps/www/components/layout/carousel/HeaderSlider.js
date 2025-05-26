@@ -1,7 +1,34 @@
+"use client";
+import { useEffect } from "react";
 import { getBlurDataUrl } from "../../../utils/helper";
 import Image from "next/image";
 
 export default function HeaderSlider() {
+  useEffect(() => {
+    try {
+      let slideIndex = 0;
+      const interval = setInterval(() => {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }, 3000);
+      return () => clearInterval(interval);
+    } catch (error) {
+      console.log("error event in slider header");
+    }
+  }, []);
   return (
     <section className="baner-home section-center">
       <article className="baner-pic">
@@ -17,7 +44,8 @@ export default function HeaderSlider() {
                   height={0}
                   sizes="100vw"
                   style={{ width: "100%", height: "auto" }}
-                  alt="image1"/>
+                  alt="image1"
+                />
                 <div className="text">مبل کلاسیک</div>
               </div>
               <div className="mySlides fade">
@@ -84,5 +112,4 @@ export default function HeaderSlider() {
       </article>
     </section>
   );
-
 }

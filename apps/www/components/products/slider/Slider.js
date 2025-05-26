@@ -1,5 +1,5 @@
 "use client";
-import { Pagination, Navigation, EffectCube, EffectFlip } from "swiper/modules";
+import { Pagination, Navigation, EffectCube, EffectFlip,EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -15,7 +15,7 @@ export default function Slider({ products }) {
       <Swiper id="swiper-id"
         modules={[Pagination, Navigation,EffectFlip]}
         spaceBetween={20}
-        effect="Flip"
+        effect="fade"
         navigation={true}
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}

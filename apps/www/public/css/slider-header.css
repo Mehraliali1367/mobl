@@ -1,7 +1,7 @@
 .conteiner-silder {
   display: flex;
-  flex-direction: column;
-  flex: row nowrap;
+  /* flex: row nowrap !important;
+  flex-direction: column ; */
   gap: 1.5rem;
   align-items: center;
   justify-content: space-around;
