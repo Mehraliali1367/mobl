@@ -8,21 +8,21 @@ from django.core.cache import cache
 
 
 def send_otp(phone_number, code):
-    # try:
-    #     key = '6B6868427A6E502B3639613163534D697454613775343246516274765069572F6376617736647A63484E413D'
-    #     api = KavenegarAPI(key)
-    #     params = {
-    #         'sender': '',
-    #         'receptor': phone_number,
-    #         'message': f'{code}کد تایید',
-    #     }
-    #     response = api.sms_send(params)
-    #     print(response)
-    #
-    # except APIException as e:
-    #     print(e)
-    # except HTTPException as e:
-    #     print(e)
+    try:
+        key = '6B6868427A6E502B3639613163534D697454613775343246516274765069572F6376617736647A63484E413D'
+        api = KavenegarAPI(key)
+        params = {
+            'sender': '',
+            'receptor': phone_number,
+            'message': f'{code}کد تایید',
+        }
+        response = api.sms_send(params)
+        print(response)
+
+    except APIException as e:
+        print(e)
+    except HTTPException as e:
+        print(e)
 
     pass
 

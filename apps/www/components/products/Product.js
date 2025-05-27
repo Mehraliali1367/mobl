@@ -72,19 +72,27 @@ export default function Product({ product }) {
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className="swiper"
-                style={{width:"20vw"}}
+                navigation={true}
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+                loop={false}
+                style={{
+                  "--swiper-navigation-color": "#4b2f02",
+                  "--swiper-pagination-color": "#4b2f02",
+                  "--swiper-pagination-bottom": "0px",
+                }}
+                className="swiper thumb-product"
               >
                 {product.images
                   ? product.images.map((img, index) => (
-                      <SwiperSlide key={index}>
+                      <SwiperSlide key={index} className="box-slide">
                         <Image
                           className="product-page-img-slid"
                           priority
                           width={0}
                           height={0}
                           sizes="70"
-                          style={{ width: "100%", height: "auto" }}
+                          // style={{ width: "100%", height: "auto" }}
                           src={img.img_l}
                           placeholder="blur"
                           blurDataURL={getBlurDataUrl()}
