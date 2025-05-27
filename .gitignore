@@ -1,4 +1,9 @@
+settings.py
+pakcage.json
+fetch.js
 # web
+apps/web/.idea/dictionaries/
+apps/web/A/settings.py
 old*.json
 *.log
 *.pot
@@ -143,7 +148,8 @@ GitHub.sublime-settings
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+apps/www/node_modules
+apps/www/.next
 /.pnp
 .pnp.*
 .yarn/*

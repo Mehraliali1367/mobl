@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center center;
-  gap: .5rem;
+  gap: 0.5rem;
   margin: 1rem auto;
 }
 .card-category .card-item {
@@ -14,32 +14,61 @@
 .text-category {
   text-align: center;
   font-weight: 900;
+  font-size: 1.385rem;
 }
 .card-item .name-category {
-  font-size: 1rem;
-  font-weight: 900;
+  font-size: 0.6rem;
+  font-weight: 700;
   text-align: center;
   padding-top: 1rem;
 }
+.cart-link img{
+  border-radius: 8px;
+}
 @media screen and (min-width: 480px) {
-  .card-category {grid-template-columns:repeat(4,1fr);}
-  .card-category .card-item {width: 6rem;}
+  .card-category {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .card-category .card-item {
+    width: 4rem;
+  }
 }
 @media screen and (min-width: 768px) {
-  .card-category {grid-template-columns: repeat(5,1fr);}
-  .card-category .card-item {width: 7rem;}
+  .card-category {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .card-category .card-item {
+    width: 5rem;
+  }
+  .text-category {
+    font-size: 2rem;
+  }
+  .card-item .name-category {
+    font-size: 0.775rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
-  .card-category {grid-template-columns:repeat(5,1fr);}
-  .card-category .card-item {width: 10rem;}
+  .card-category {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .card-category .card-item {
+    width: 8rem;
+  }
+  .card-item .name-category {
+    font-size: .875rem;
+  }
 }
 @media screen and (min-width: 1200px) {
-  .card-category {grid-template-columns:repeat(6,1fr);}
-  .card-category .card-item {width: 12rem;}
+  .card-category {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .card-category .card-item {
+    width: 10rem;
+  }
+  .card-item .name-category {
+    font-size: 1rem;
+  }
 }
-
-
-
 
 /* End baner-category */
