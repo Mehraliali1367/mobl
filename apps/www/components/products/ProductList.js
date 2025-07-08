@@ -53,11 +53,11 @@ export default function ProductList() {
     const subcategory = await getFetch("/products/subcategory/");
     setSubcategory(subcategory.response);
   };
-  function sleeper(ms) {
-    return function (x) {
-      return new Promise((resolve) => setTimeout(() => resolve(x), ms));
-    };
-  }
+  // function sleeper(ms) {
+  //   return function (x) {
+  //     return new Promise((resolve) => setTimeout(() => resolve(x), ms));
+  //   };
+  // }
   const handelCheckBoxClick = (e) => {
     // console.log(e);
 

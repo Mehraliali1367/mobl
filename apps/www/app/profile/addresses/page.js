@@ -19,7 +19,7 @@ export default async function Addresses() {
       <hr />
       <h3 className="mt-1">آدرس های من</h3>
       {Alladdress.length > 0
-        ? Alladdress.map((address) => (
+        ? Alladdress.map((address,key) => (
             <>
               <EditAddress key={address.id}
                 provinces={profile.response.province}

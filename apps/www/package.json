@@ -3,14 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:next": "next dev",
+    "dev": "next dev",
     "build": "next build",
-    "start:dev": "next start",
-    "lint": "next lint",
-    "dev": "nodemon server.js",
-    "start": "pm2-runtime server.js --name www"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^4.3.0",
     "@reduxjs/toolkit": "^2.6.1",
     "bootstrap-icons": "^1.11.3",
     "dotenv": "^16.5.0",
@@ -27,4 +26,4 @@
   "devDependencies": {
     "nodemon": "^3.1.10"
   }
-} 
+}

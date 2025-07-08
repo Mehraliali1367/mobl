@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function ModalOrders({ showModal, data }) {
-  data.map((item) => {
-    console.log(item.Items);
-  });
+  // data.map((item) => {
+  //   console.log(item.Items);
+  // });
 
   const [isActive, setIsActive] = useState(false);
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function ModalOrders({ showModal, data }) {
               order.Items.map((item) => (
                 <div key={item.id} className="table-row">
                   <div className="col-5vw table-img">
-                    {item.product.images.map(
+                    {item.product.images.map( 
                       (img, index) =>
                         img.product_type_name == 7 && (
                           <Image
@@ -54,7 +54,7 @@ export default function ModalOrders({ showModal, data }) {
                             height={0}
                             sizes="100vw"
                             style={{ width: "100%", height: "auto" }}
-                            src={img.img100}
+                            src={img.primary_image}
                             placeholder="blur"
                             blurDataURL={getBlurDataUrl()}
                             alt="image-slider"

@@ -23,7 +23,7 @@ export default function HeaderSlider() {
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
-      }, 3000);
+      }, 5000);
       return () => clearInterval(interval);
     } catch (error) {
       console.log("error event in slider header");
@@ -42,7 +42,7 @@ export default function HeaderSlider() {
                   blurDataURL={getBlurDataUrl()}
                   width={0}
                   height={0}
-                  sizes="100vw"
+                  sizes="100"
                   style={{ width: "100%", height: "auto" }}
                   alt="image1"
                 />
@@ -55,7 +55,7 @@ export default function HeaderSlider() {
                   blurDataURL={getBlurDataUrl()}
                   width={0}
                   height={0}
-                  sizes="100vw"
+                  sizes="100"
                   style={{ width: "100%", height: "auto" }}
                   alt="image2"
                 />
@@ -69,7 +69,7 @@ export default function HeaderSlider() {
                   blurDataURL={getBlurDataUrl()}
                   width={0}
                   height={0}
-                  sizes="100vw"
+                  sizes="100"
                   style={{ width: "100%", height: "auto" }}
                   alt="image3"
                 />
@@ -90,7 +90,7 @@ export default function HeaderSlider() {
                 blurDataURL={getBlurDataUrl()}
                 width={0}
                 height={0}
-                sizes="100vw"
+                sizes="80"
                 style={{ width: "100%", height: "auto" }}
                 alt="image1-1"
               />
@@ -102,7 +102,7 @@ export default function HeaderSlider() {
                 blurDataURL={getBlurDataUrl()}
                 width={0}
                 height={0}
-                sizes="100vw"
+                sizes="80"
                 style={{ width: "100%", height: "auto" }}
                 alt="image1_2"
               />

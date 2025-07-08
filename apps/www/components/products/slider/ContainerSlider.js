@@ -1,14 +1,15 @@
 "use client";
-import { Pagination, Navigation, EffectCube, EffectFlip,EffectFade } from "swiper/modules";
+import { Pagination, Navigation, EffectFlip } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../../../public/css/slider-scroll-horizontal.css";
 import Cart from "../Card";
+import Link from "next/link";
 
 
-export default function Slider({ products }) {
+export default function ContainerSlider({ products }) {
   // products ? console.log(products) : "";
   return (
     <article className="sofa">
@@ -42,10 +43,10 @@ export default function Slider({ products }) {
           : ""}
       </Swiper>
       <div className="section-center-box">
-        <button className="btn btn-other-product" onClick={() => {}}>
+        <Link href={"/products"} className="btn btn-other-product" onClick={() => {}}>
           {" "}
           مشاهده همه محصولات این گروه
-        </button>
+        </Link>
       </div>
     </article>
   );

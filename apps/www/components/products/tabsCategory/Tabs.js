@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Tab from "./Tab";
-import Slider from "../../products/slider/Slider";
+import ContainerSlider from "../slider/ContainerSlider";
 import "../../../public/css/tabs.css";
 
 const Tabs = ({ tabs, category_name }) => {
@@ -66,7 +66,7 @@ const Tabs = ({ tabs, category_name }) => {
         </article>
       </div>
       <div className="tab-content">
-        {products ? <Slider products={products} /> : ""}
+        {products ? <ContainerSlider products={products} /> : ""}
       </div>
     </div>
   );
