@@ -11,9 +11,6 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import "../../public/css/productPage.css";
-
-// import large from "../../public/images/products/chob iran1/chob-iran1-size-800pixle.jpg";
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import TabsProfileProduct from "./tabsProfileProduct/TabsProfileProduct";

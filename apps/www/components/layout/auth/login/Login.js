@@ -40,8 +40,7 @@ export default function Login({ showSetState }) {
               className={is_pending ? "" : "btn pl-btn-login-page"}
               disabled={is_pending}
             >
-              {" "}
-              {is_pending ? <div className="loading"></div> : "ورود"}{" "}
+              {is_pending ? <div className="loading"></div> : "ورود"}
             </button>
           </form>
         </div>

@@ -1,39 +1,48 @@
-.pl-card-login{
-    position: relative;
-    border: 2px solid var(--clr-grey-2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 20rem;
-    margin: 4rem auto;
-    border-radius: 10px;
+.pl-card-login {
+  position: relative;
+  border: 2px solid var(--clr-grey-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 20rem;
+  margin: 4rem auto;
+  border-radius: 10px;
 }
-.pl-group-input{
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-    color: var(--clr-primary-dark-5);
-    font-weight: 700;
+.pl-group-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  color: var(--clr-primary-dark-5);
+  font-weight: 700;
 }
-.pl-form-control{
-    margin: .5rem 0;
-    border: 1px solid var(--clr-grey-2);
-    font-size: 1rem;
-    line-height: 2.325;
-    border-radius: 10px;
-    direction: ltr;
+.pl-form-control {
+  margin: 0.5rem 0;
+  border: 1px solid var(--clr-grey-2);
+  font-size: 1rem;
+  line-height: 2.325;
+  border-radius: 10px;
+  direction: ltr;
 }
-.pl-btn-login-page{
-    margin: 1rem 0;
-    padding: .325rem 1rem;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: 600;
-   
+.pl-btn-login-page {
+  margin: 1rem 0;
+  padding: 0.325rem 1rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
 }
 .loading:after {
-    content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--clr-grey-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease-out forwards;
+  animation-delay: 2s;
+
+  /* content: "";
     position: absolute;
     border-radius: 100%;
     cursor: none;
@@ -45,17 +54,17 @@
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-left-color: #fff;
     border-top-color: #fff;
-    animation: spin 0.6s infinite linear, grow 0.3s forwards ease-out;
-  }
-  .resend-opt-btn{
-    position: absolute;
-    left: 2rem;
-    bottom: 1rem;
-  }
-  .btn-resend{
-    padding: .325rem .875rem;
-    border-radius: 20px;
-    font-size: .825rem;
-    font-weight: 600;
-    background: var(--clr-primary-dark-5);
-  }
+    animation: spin 0.6s infinite linear, grow 0.3s forwards ease-out; */
+}
+.resend-opt-btn {
+  position: absolute;
+  left: 2rem;
+  bottom: 1rem;
+}
+.btn-resend {
+  padding: 0.325rem 0.875rem;
+  border-radius: 20px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  background: var(--clr-primary-dark-5);
+}
