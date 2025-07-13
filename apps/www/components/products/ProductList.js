@@ -4,7 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import Cart from "./Card";
 import { getFetch } from "../../utils/fetch";
 import Loading from "./Loading";
-import SideBar from "./SideBar";
+import SideBar from "./oldSideBar";
 import { useSearchParams } from "next/navigation";
 
 export default function ProductList() {

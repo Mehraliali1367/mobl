@@ -27,6 +27,9 @@ export default function Layout({ children }) {
               <Link href="/profile/transactions">تراکنش ها</Link>
             </li>
             <li className="list-group-item">
+              <Link href="/profile/report">گزارشگیری</Link>
+            </li>
+            <li className="list-group-item">
               <a
                 href="#"
                 onClick={async () => {

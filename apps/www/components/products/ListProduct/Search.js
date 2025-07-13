@@ -5,22 +5,17 @@ export default function Search() {
   const [txtSearch, setTxtSearch] = useState("");
   const pathname = usePathname();
   const router = useRouter();
-
+  const params = new URLSearchParams();
   const handleSearch = () => {
-    const value = txtSearch;
-    const params = new URLSearchParams();
-    if (value.length > 0) {
-      params.set("search", value.toString());
-      router.replace(`${pathname}?search=${value.toString()}`);
-    }
+    params.set("search", txtSearch);
+    // console.log('in searchcomponenet:'+params.toString())
+    router.replace(`${pathname}?${params.toString()}`);
   };
   const handleBtnTxtSearchRemove = () => {
     document.querySelector("#txtSearch").value = "";
     setTxtSearch("");
-    const params = new URLSearchParams();
-      params.delete("search",);
-      router.replace(`${pathname}`);
-
+    params.delete("search");
+    router.replace(`${pathname}`);
   };
   return (
     <div className="search-page-products">
@@ -32,6 +27,7 @@ export default function Search() {
           id="txtSearch"
           className="form-control"
           placeholder="نام محصول ..."
+          value={txtSearch}
           onChange={(e) => setTxtSearch(e.target.value)}
         />
         <span
@@ -42,7 +38,9 @@ export default function Search() {
           type="reset"
         ></span>
         <button
-          onClick={() => handleSearch()}
+          onClick={() => {
+            txtSearch !== "" && handleSearch();
+          }}
           className="btn-group-text cursor"
         >
           <i className="bi bi-search"></i>
