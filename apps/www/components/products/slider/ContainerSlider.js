@@ -9,7 +9,7 @@ import Cart from "../Card";
 import Link from "next/link";
 
 
-export default function ContainerSlider({ products }) {
+export default function ContainerSlider({ products,category }) {
   // products ? console.log(products) : "";
   return (
     <article className="sofa">
@@ -43,7 +43,7 @@ export default function ContainerSlider({ products }) {
           : ""}
       </Swiper>
       <div className="section-center-box">
-        <Link href={"/products"} className="btn btn-other-product" onClick={() => {}}>
+        <Link href={`/products?subcategories=${category}`} className="btn btn-other-product" onClick={() => {}}>
           {" "}
           مشاهده همه محصولات این گروه
         </Link>

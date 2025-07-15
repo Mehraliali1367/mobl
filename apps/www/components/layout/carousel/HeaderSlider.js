@@ -4,10 +4,10 @@ import { getBlurDataUrl } from "../../../utils/helper";
 import Image from "next/image";
 
 export default function HeaderSlider() {
-  useEffect(() => {
-    try {
-      let slideIndex = 0;
-      const interval = setInterval(() => {
+  function startSetInterval() {
+    let slideIndex = 0;
+    setInterval(
+      (function runSlider() {
         let i;
         let slides = document.getElementsByClassName("mySlides");
         let dots = document.getElementsByClassName("dot");
@@ -23,11 +23,14 @@ export default function HeaderSlider() {
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
-      }, 5000);
-      return () => clearInterval(interval);
-    } catch (error) {
-      console.log("error event in slider header");
-    }
+        return runSlider;
+      })(),
+      5000
+    );
+  }
+
+  useEffect(() => {
+    startSetInterval();
   }, []);
   return (
     <section className="baner-home section-center">

@@ -38,6 +38,7 @@
     padding: .875rem .325rem;
     box-shadow: var(--light-shadow);
     width: 100%;
+    height: auto;
     border-radius: 10px;
     margin-top: .325rem;
 }

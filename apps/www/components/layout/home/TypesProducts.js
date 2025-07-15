@@ -1,6 +1,5 @@
 import Image from "next/image";
-
-export default function TypesProducts() {
+export default function TypesProducts(){
   return (
     <article className="baner-category section-center">
       <div className="container-category">

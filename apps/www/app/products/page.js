@@ -7,23 +7,36 @@ import { getFetch } from "../../utils/fetch";
 import { Suspense } from "react";
 
 export default async function productsPage({ searchParams }) {
-  const { search, page, sort } = await searchParams;
-  //   data = await getFetch(
-  //   `/products/ProductList/?page=1&subcategories=${arr.join()}&sort=${sort}`
-  // );
-  const data = await getFetch(
-    `/products/SearchList/?page=${page ? page : 1}&search=${search}&sort=${
-      sort ? sort : "max"
-    }`
-  );
-  console.log(data.response.results);
-  const result = data.response.results;
+  const { search, category, subcategories, page, sort } = await searchParams;
+
+  let data = null;
+if (category) {
+     data = await getFetch(
+      `/products/SearchList/?page=${page ? page : 1}&category=${category}&sort=${
+        sort ? sort : "max"
+      }`
+    );
+}
+  if (search) {
+    data = await getFetch(
+      `/products/SearchList/?page=${page ? page : 1}&search=${search}&sort=${
+        sort ? sort : "max"
+      }`
+    );
+  } else {
+    data = await getFetch(
+      `/products/ProductList/?page=${page ? page : 1} &subcategories=${
+        subcategories ? subcategories : ""
+      }&sort=${sort ? sort : "max"}`
+    );
+  }
+
+  const result = data.response;
   return (
     <>
       <section className="products">
         <Suspense fallback={<Loading />}>
-          {/* <ProductList /> */}
-          <ListProduct products={result} />
+          <ListProduct data={result} />
         </Suspense>
       </section>
     </>

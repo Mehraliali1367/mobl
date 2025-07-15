@@ -17,9 +17,24 @@ export default function Search() {
     params.delete("search");
     router.replace(`${pathname}`);
   };
+  const onChange = (e) => {
+    setTxtSearch(e.target.value);
+    if (e.target.value.trim() === "") {
+      handleBtnTxtSearchRemove();
+    }
+  };
   return (
     <div className="search-page-products">
-      <label className="form-label">جستجو</label>
+      <div>
+        <label className="form-label">جستجو</label>
+        <span
+          onClick={() => {
+            handleBtnTxtSearchRemove();
+          }}
+          className={txtSearch === "" ? "close-icon hide" : "close-icon"}
+          type="reset"
+        ></span>
+      </div>
 
       <div className="input-group">
         <input
@@ -28,15 +43,9 @@ export default function Search() {
           className="form-control"
           placeholder="نام محصول ..."
           value={txtSearch}
-          onChange={(e) => setTxtSearch(e.target.value)}
+          onChange={(e) => onChange(e)}
         />
-        <span
-          onClick={() => {
-            handleBtnTxtSearchRemove();
-          }}
-          className={txtSearch === "" ? "close-icon hide" : "close-icon"}
-          type="reset"
-        ></span>
+
         <button
           onClick={() => {
             txtSearch !== "" && handleSearch();

@@ -66,7 +66,7 @@ const Tabs = ({ tabs, category_name }) => {
         </article>
       </div>
       <div className="tab-content">
-        {products ? <ContainerSlider products={products} /> : ""}
+        {products ? <ContainerSlider products={products} category={category_name }/> : ""}
       </div>
     </div>
   );

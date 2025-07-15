@@ -164,6 +164,7 @@ useEffect(()=>{
         <input name="address_id" type="hidden" value={address.id} />
         <button className="btn profile-btn profile-remove">حذف</button>
       </form>
+      <hr className="mb-1" />
     </div>
   );
 }

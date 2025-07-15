@@ -2,81 +2,45 @@
 import { getFetch } from "../../../utils/fetch";
 import { useEffect, useState } from "react";
 import Search from "./Search";
-export default function (
-  {
-    // subcategory,
-    // checkboxes,
-    // txtSearch,
-    // onClick,
-    // onSort,
-    // onChangeInput,
-    // onClickBtnRemoveInputSearch,
-    // onClickBtnSearch,
-  }
-) {
+import { usePathname, useRouter } from "next/navigation";
+import Rank from "./Rank";
+export default function () {
   const [subcategory, setSubcategory] = useState([]);
+  const [checkboxes, setCheckboxs] = useState([]);
+  const pathname = usePathname();
+  const router = useRouter();
+  const params = new URLSearchParams();
+
   const loadSubcategory = async () => {
     const subcategory = await getFetch("/products/subcategory/");
     setSubcategory(subcategory.response);
   };
+
   useEffect(() => {
     loadSubcategory();
   }, []);
+
+  const handelCheckBoxClick = (e) => {
+    let el = e.target.name;
+    let arr = checkboxes;
+    var index = arr.indexOf(el);
+
+    if (index === -1) {
+      arr = [...arr, el];
+    } else {
+      arr.splice(index, 1);
+    }
+
+    setCheckboxs([...arr]);
+    params.set("subcategories", arr.join());
+    // console.log('in searchcomponenet:'+params.toString())
+    router.replace(`${pathname}?${params.toString()}`);
+  };
+
   return (
     <article className="products-side-bar">
       <Search />
-      <div className="filter-list">
-        <h3>ترتیب</h3>
-        <div className="container-filter-list" id="filters-container-price">
-          <div className="filter-list-item">
-            <div className="item">
-              <label className="radio-container">
-                <input
-                  type="radio"
-                  id="max"
-                  name="radio"
-                  // onClick={onSort}
-                  defaultChecked
-                />
-                <span className="radio-checkmark"></span>
-                بیشترین قیمت
-              </label>
-            </div>
-            <div className="item">
-              <label className="radio-container">
-                {/* onClick={onSort} */}
-                <input type="radio" id="min" name="radio" />
-                <span className="radio-checkmark"></span>
-                کمترین قیمت
-              </label>
-            </div>
-            {/* <div className="item">
-              <label className="radio-container">
-                <input
-                  type="radio"
-                  id="bestseller"
-                  name="radio"
-                  onClick={(e) => setRadioboxSort(e.target.id)}
-                />
-                <span className="radio-checkmark"></span>
-                پرفروش ترین
-              </label>
-            </div> */}
-            <div className="item">
-              <label className="radio-container">
-                <input
-                  type="radio"
-                  id="discount"
-                  name="radio"
-                  // onClick={onSort}
-                />
-                <span className="radio-checkmark"></span>
-                باتخفیف
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Rank />
       <div className="filter-list">
         <h3>دسته بندی</h3>
         <div className="container-filter-list" id="filters-container-product">
@@ -100,9 +64,8 @@ export default function (
                             id={item.name}
                             name={item.slug}
                             className="check"
-                            // onClick={(e) => handleChange(e)}
-                            // onChange={onClick}
-                            // checked={checkboxes.includes(item.name)}
+                            onChange={(e) => handelCheckBoxClick(e)}
+                            checked={checkboxes.includes(item.name)}
                           />
                           <span className="checkbox-checkmark"></span>
                           {item.name_persian}
@@ -116,8 +79,6 @@ export default function (
           </div>
         </div>
       </div>
-
-      <div className="right"></div>
     </article>
   );
 }

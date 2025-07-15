@@ -3,6 +3,11 @@ const mainUrl = "http://localhost:8000/api";
 
 const getFetch = async (url, headers = {}) => {
   try {
+    if(url.startsWith('http')||url.startsWith('https')){
+      const temp = url.split('api')
+      url=temp[1]
+      console.log("url: "+ url )
+    }
     const request = await fetch(`${mainUrl}${url}`, {
       cache: "no-store",
       headers: {

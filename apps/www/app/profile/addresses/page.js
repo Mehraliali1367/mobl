@@ -8,6 +8,7 @@ export default async function Addresses() {
   const profile = await getFetch("/accounts/profile/personal/", {
     Authorization: `Bearer ${access_token.value}`,
   });
+  
   const Alladdress = profile.response.addresses;
 
   return (
@@ -19,15 +20,13 @@ export default async function Addresses() {
       <hr />
       <h3 className="mt-1">آدرس های من</h3>
       {Alladdress.length > 0
-        ? Alladdress.map((address,key) => (
-            <>
-              <EditAddress key={address.id}
-                provinces={profile.response.province}
-                cities={profile.response.cities}
-                address={address}
-              />
-              <hr className="mb-1" />
-            </>
+        ? Alladdress.map((address) => (
+            <EditAddress
+              key={address.id}
+              provinces={profile.response.province}
+              cities={profile.response.cities}
+              address={address}
+            />
           ))
         : ""}
     </div>

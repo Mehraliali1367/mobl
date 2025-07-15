@@ -60,17 +60,18 @@ import
   display: block;
   width: 15px;
   height: 15px;
-  position: absolute;
-  background-color: var(--clr-grey-6);
-  z-index: 1;
+  /* position: absolute;
   right: 70%;
   top: 0;
-  bottom: 0;
-  margin: auto;
+  bottom: 0; */
+  /* background-color: var(--clr-danger); */
+  outline-color: var(--clr-danger);
+  z-index: 1;
+  margin: 0px 5px;
   padding: 2px;
   border-radius: 50%;
   text-align: center;
-  color: white;
+  color: var(--clr-danger);
   font-weight: 700;
   font-size: 12px;
   box-shadow: 0 0 2px var(--clr-grey-10);
