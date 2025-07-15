@@ -57,7 +57,7 @@ class ProductList(APIView, PageNumberPagination):
     def get(self, request):
         param_categoires = request.GET.get("subcategories")
         param_sort = request.GET.get("sort")
-        print('/' * 100)
+        print('/' * 100 + 'ProductList')
         # print('pppp:' + param_sort)
         if param_sort == "max":
             sort = '-price'
@@ -70,10 +70,19 @@ class ProductList(APIView, PageNumberPagination):
 
         print(sort)
         if param_categoires is None:
-            print('%'*100)
             param_categoires = ""
 
         if len(param_categoires):
+            if ',' not in param_categoires:
+                try:
+                    print(param_categoires)
+                    category=Category.objects.get(name=param_categoires,is_category=True)
+                    param_categoires=','.join([(x.name) for x in category.self_category.all()])
+                    print('+'*100)
+                    # print(ca)
+                except:
+                    print("/-"*100)
+
             if ',' in param_categoires:
                 items = param_categoires.split(',')
                 products = Product.objects.filter(category__name__in=items, is_active=True).order_by(sort)
@@ -91,7 +100,7 @@ class SearchList(APIView, PageNumberPagination):
     def get(self, request):
         param_search = request.GET.get("search")
         param_sort = request.GET.get("sort")
-        print('/' * 100)
+        print('/' * 100 + 'SearchList')
         print('pppp:' + param_sort)
         if param_sort == "max":
             sort = '-price'
@@ -123,4 +132,3 @@ class DetailProduct(APIView):
             return Response(ser_data.data, status=status.HTTP_200_OK)
         else:
             return Response(ser_data.errors)
-
