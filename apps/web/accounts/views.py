@@ -383,7 +383,7 @@ class ProfileView(APIView):
         else:
             return Response({"error": {"Access denied"}}, status=status.HTTP_403_FORBIDDEN)
 
-class ReadJson(View):
+class ReadJsonCities(View):
     def get(self, request):
         return render(request, 'form.html')
 
@@ -397,6 +397,24 @@ class ReadJson(View):
                     provinceName=item['provinceName'],
                     cityName=item['cityName'],
                     cityId=item['cityId'],
+                    provinceId=item['provinceId'],
+                )
+                province.save()
+            return render(request, 'success.html')
+        return render(request, 'form.html')
+
+class ReadJsonProvinces(View):
+    def get(self, request):
+        return render(request, 'form.html')
+
+    def post(self, request):
+        if request.FILES['json_file']:
+            json_file = request.FILES['json_file']
+            data = json.load(json_file)
+            # print(data)
+            for item in data:
+                province = Province(
+                    provinceName=item['provinceName'],
                     provinceId=item['provinceId'],
                 )
                 province.save()

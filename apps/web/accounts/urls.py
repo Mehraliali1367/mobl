@@ -17,5 +17,6 @@ urlpatterns = [
     path('logout/', views.LogoutView.as_view(), name='auth_logout'),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    # path('read_json/', views.ReadJson.as_view(), name='read_json'),
+    path('read_json_city/', views.ReadJsonCities.as_view(), name='read_json'),
+    path('read_json_province/', views.ReadJsonProvinces.as_view(), name='read_json'),
 ]
