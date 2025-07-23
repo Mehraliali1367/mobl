@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import "../../public/css/productPage.css";
+import "../../public/css/tbl_per_prd.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import TabsProfileProduct from "./tabsProfileProduct/TabsProfileProduct";
@@ -19,7 +20,7 @@ import { addToCart, removFromCart } from "../../redux/slices/cartSlice";
 import { toast } from "react-toastify";
 
 export default function Product({ product }) {
-  // console.log(product);
+  console.log(product);
   const [picMaster, setPicMaster] = useState("");
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();

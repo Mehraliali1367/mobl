@@ -117,10 +117,10 @@ p {
 .profile-tab {
   margin: 2rem 0;
 }
-.tab > p {
-  display: flex;
-  justify-content: center;
-}
+/* .tab > p {
+  display:d;
+  justify-content: v;
+} */
 .container-swiper {
   border: 1px solid var(--clr-grey-2);
   margin: auto 0.325rem;

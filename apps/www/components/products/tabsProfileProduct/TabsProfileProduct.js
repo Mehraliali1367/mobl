@@ -6,6 +6,8 @@ import TabProfileProduct from "./TabProfileProduct";
 
 const TabsProfileProduct = ({ tabs, data }) => {
   const [activeTab, setActiveTab] = useState(0);
+  console.log(data);
+  
 
   const handleTabClick = (index) => {
     setActiveTab(index);
