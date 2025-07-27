@@ -1,14 +1,14 @@
 "use client";
 
 // import Coupon from "../components/cart/Coupon";
-import { getBlurDataUrl, numberFormat } from "../../utils/helper";
+import { getBlurDataUrl, numberFormat } from "../../../utils/helper";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
-import "../../public/css/page_cart.css";
+import "../../../public/css/page_cart.css";
 import { useEffect, useState } from "react";
-import { getToken } from "../../actions/auth/loginAction";
-import { getFetch } from "../../utils/fetch";
-import { removFromCart } from "../../redux/slices/cartSlice";
+import { getToken } from "../../../actions/auth/loginAction";
+import { getFetch } from "../../../utils/fetch";
+import { removFromCart } from "../../../redux/slices/cartSlice";
 export default function Cart() {
   const state = useSelector((state) => state.shoppingCart);
   const [stateAddress, setAddress] = useState([]);

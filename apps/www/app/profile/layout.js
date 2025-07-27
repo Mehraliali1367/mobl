@@ -18,6 +18,9 @@ export default function Layout({ children }) {
               <Link href="/profile">اطلاعات کاربر</Link>
             </li>
             <li className="list-group-item">
+              <Link href="/profile/cart">سبد خرید</Link>
+            </li>
+            <li className="list-group-item">
               <Link href="/profile/addresses">آدرس ها</Link>
             </li>
             <li className="list-group-item">

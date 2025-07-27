@@ -29,7 +29,7 @@ export default function Header() {
         </div>
         <div className="header-art-nav-item con-icon-baner">
           <div className="con-icon-baner-item">
-            <Link className="bascket" href="/cart">
+            <Link className="bascket" href="/profile/cart">
               <i className="bi bi-basket"></i>
               <span className="bascket-count">{state.cart.length}</span>
             </Link>
