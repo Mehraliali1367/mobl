@@ -1,4 +1,4 @@
-const mainUrl = "https://vargan.ir:8000/api";
+const mainUrl = "https://vargan.ir/api";
 // const mainUrl = "http://localhost:8000/api";
 
 const getFetch = async (url, headers = {}) => {
