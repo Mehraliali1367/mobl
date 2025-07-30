@@ -69,13 +69,10 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
 ]
 # myapp
+CSRF_TRUSTED_ORIGINS = ['https://*.vargan.ir','https://*.127.0.0.1']
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://localhost:3000",
-    "http://vargan.ir:3000",
-    "https://vargan.ir",
-    "http://vargan.ir",
-    "https://vargan.ir:3000",
     "http://127.0.0.1:3000",
     "http://192.168.1.5:3000",
     "http://37.152.180.252",
